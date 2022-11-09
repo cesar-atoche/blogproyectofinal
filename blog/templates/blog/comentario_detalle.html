@@ -1,0 +1,25 @@
+{% extends 'blog/body/base.html' %}
+{% load static %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >{{titulo}}</td>
+            <td ></td>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <form method="post">{% csrf_token %}
+            ¿Estás seguro que deseas borrar el comentario "{{ object }}"?
+            <input type="submit" value="Submit" />
+        </form>
+    
+    </tbody>
+
+</table>
+{% endblock %}    

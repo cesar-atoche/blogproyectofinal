@@ -1,0 +1,26 @@
+body {
+  /* background: url(/image/background.png) 100% 100%; */
+  background-color: #E8F0F9;
+  background-size: cover;
+  font-family: "Segoe IU", sans-serif;
+
+}
+
+.container {
+  background: #fbfbfb;
+}
+
+footer {
+  font-size: 9px;
+  margin: 10px;
+  font-style: arial;
+  text-align: center;
+  padding: 3px;
+  color: black;
+}
+
+.hr {
+  border: 3px;
+  border-color: black;
+}
+

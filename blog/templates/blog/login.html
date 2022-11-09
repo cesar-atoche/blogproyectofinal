@@ -1,0 +1,33 @@
+{% extends 'blog/body/base.html' %}
+{% load static %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table" >
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >{{titulo}}</td>
+            <td ></td>
+        </tr>
+    </thead>
+    <tbody>
+<td>
+
+        <form action="" method="POST">{% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit"> Iniciar Sesión</button>
+
+        </form>
+        <tr><td colspan=2>
+            <center><font size=1>Click si no esta registrado <a href="{% url "Register" %}">REGISTRARME</font></a>
+         </td></tr>
+
+
+
+    </tbody>
+
+</table>
+{% endblock %}

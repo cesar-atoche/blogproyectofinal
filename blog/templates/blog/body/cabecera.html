@@ -1,0 +1,51 @@
+<!-- cabecera -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        
+        {% if not request.user.is_authenticated %}
+        {% comment %} <a class="btn btn-primary" href="{% url 'login' %}">INICIAR</a> {% endcomment %}
+        <p class="navbar-brand">BLOGCITO</p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "Inicio" %}">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "Login" %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "Register" %}">Registrarse</a>
+            </li>
+        </ul>
+    </div>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+        {% comment %} <img src="{{(Avatar.objects.filter(user = request.user.id))[0].imagen.url)}}" /> {% endcomment %}
+        <p class="navbar-brand"> ¡¡¡ Bienvenido, {{user.username}}!!!.</p>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "IndexLo" %}">Inicio</a>    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "EditarPerfil" %}">Editar Perfil</a>    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "Logout" %}">Cerrar Sesion</a>   
+                </li>
+
+                
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+{% extends 'blog/body/base.html' %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >
+                {% if request.user.is_authenticated %}
+                <img height="40px" src="{{url}}" >
+                <font size=2>Que bueno verte {{user.username}}</font>
+                {% endif %}
+            </td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small">
+        <td>
+
+        
+        <div class="text-center">
+            
+        </div>   
+        
+    </tbody>
+
+</table>
+{% endblock %}

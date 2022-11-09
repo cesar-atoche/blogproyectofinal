@@ -1,0 +1,32 @@
+{% extends 'blog/body/base.html' %}
+{% load static %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td colspan=2 >{{titulo}}</td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small">
+        <td colspan=2>
+        <form action="/register/" method="POST">{% csrf_token %}
+
+
+            {{ form.as_p }}
+        </td>
+            
+        <tr><td></td><td>
+            <input type="submit" value="Registrarse">
+        </td></tr>
+        </form>
+        <tr><td colspan=2>
+            <center> <a href="{% url "Inicio" %}"><font size=1>Regresar al inicio</font></a>
+         </td></tr>
+       
+    </tbody>
+
+</table>
+{% endblock %}

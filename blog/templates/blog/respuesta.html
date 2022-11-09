@@ -1,0 +1,28 @@
+{% extends 'blog/body/base.html' %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td>{{titulo}}</td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small">
+        <tr><td></td></tr>
+        <tr>
+        <td>
+        <p>
+        Gracias el usuario <b>{{mensaje}}</b> se {{titulo}} con exito.
+        </p>
+        </td>
+        <tr>
+        <tr><td>
+           <center> <a href="{% url "Inicio" %}">Regresar a Inicio</a>
+        </td></tr>
+       
+    </tbody>
+
+</table>
+{% endblock %}

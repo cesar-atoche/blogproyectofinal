@@ -1,0 +1,33 @@
+{% extends 'blog/body/base.html' %}
+{% load static %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table" >
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >{{titulo}}</td>
+            <td ></td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small" >
+        
+        <form action="/comentarios/" method="POST">{% csrf_token %}
+            
+           
+            {{ formulario.as_table }}
+           
+            
+           <tr><td></td><td>
+        <input type="submit" value="Guardar">
+    </td></tr>
+        </form>
+        <tr><td colspan=2>
+            <center> <a href="{% url "Inicio" %}"><font size=1>Regresar a formularios</font></a>
+         </td></tr>
+       
+    </tbody>
+
+</table>
+{% endblock %}

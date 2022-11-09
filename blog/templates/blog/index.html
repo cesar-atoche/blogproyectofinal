@@ -1,0 +1,26 @@
+{% extends 'blog/body/base.html' %}
+{% block title %}{{titulo}}{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >{{titulo}}</td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small">
+        <td>
+        {% if not request.user.is_authenticated %}
+        <div class="text-center">
+            <font size=3>BIENVENIDO A NUESTRO BLOG</font><p><br>
+            <a href="{% url "Login" %}"><font size=1>Click para Iniciar Sesion</font></a><p>
+            <a href="{% url "Register" %}"><font size=1>Click para Registrarse</font></a><p>
+        </div>  
+        {% endif %}
+        
+
+    </tbody>
+
+</table>
+{% endblock %}

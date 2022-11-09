@@ -1,0 +1,23 @@
+{% extends 'blog/body/base.html' %}
+{% load static %}
+{% block title %}{{titulo}}{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead class="text-left font-weight-bold table-dark">
+        <tr class="text-white ">
+            <td >{{titulo}}</td>
+            <td ></td>
+        </tr>
+    </thead>
+    <tbody id="tabla-datos" class="small">
+        <form action="" method="POST">{% csrf_token %}
+            <table>
+                Estás seguro de que querés borrar el curso {{ object }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </tbody>
+
+</table>
+{% endblock %}
